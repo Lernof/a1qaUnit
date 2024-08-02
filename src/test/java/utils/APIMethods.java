@@ -1,6 +1,7 @@
 package utils;
 
 import io.restassured.response.Response;
+import models.Post;
 
 public class APIMethods {
     public static Response getAllPosts(){
@@ -15,5 +16,7 @@ public class APIMethods {
     public static Response getAllUsers(){
         return APIUtils.getMethod("/users");
     }
-
+    public static <T> Response postUser(T entity){
+        return APIUtils.postMethod("/posts",entity);
+    }
 }

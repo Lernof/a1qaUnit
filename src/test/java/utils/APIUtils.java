@@ -19,12 +19,14 @@ public class APIUtils {
                 .get(endpoint)
                 .then()
                 .statusCode(200)
+                .assertThat()
                 .extract().response();
     }
 
     public static <T> Response postMethod(String endpoint, T entry){
         RestAssured.baseURI = baseURI;
         return RestAssured.given()
+                .header("Content-Type", "application/json")
                 .when()
                 .body(entry)
                 .post(endpoint)

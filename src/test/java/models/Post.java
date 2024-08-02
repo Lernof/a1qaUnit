@@ -2,12 +2,12 @@ package models;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 public class Post {
-    private String userId;
-    private String id;
+    private int userId;
+    private int id;
     private String title;
     private String body;
 }

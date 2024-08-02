@@ -19,11 +19,16 @@ public class SettingsTestData {
     private final String TEST_DATA = RESOURCES_PATH + "test_data/";
     private final String POSTS = TEST_DATA + "posts.json";
     private final String USERS = TEST_DATA + "users.json";
+    private final String ENTITY = TEST_DATA + "post_entity.json";
 
     private final Env CURRENT_ENVIRONMENT = deserialize(RESOURCES_PATH + "env.json", Env.class);
 
     public EnvData getEnvData(){
         return deserialize(String.format("%s%s.json", ENVIRONMENT_PATH, CURRENT_ENVIRONMENT.getEnv()), EnvData.class);
+    }
+
+    public Post getPostEntity(){
+        return deserialize(ENTITY, Post.class);
     }
 
     public List<Post> getPosts(){
