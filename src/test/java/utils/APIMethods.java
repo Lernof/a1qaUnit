@@ -7,7 +7,7 @@ public class APIMethods {
     public static Response getAllPosts(){
             return APIUtils.getMethod("/posts");
     }
-    public static Response getSpecificPerson(int personId){
+    public static Response getSpecificPost(int personId){
         return APIUtils.getMethod("/posts/" + personId);
     }
     public static Response getSpecificUser(int userId){

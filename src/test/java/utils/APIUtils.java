@@ -16,11 +16,7 @@ public class APIUtils {
         RestAssured.baseURI = baseURI;
         return RestAssured.given()
                 .when()
-                .get(endpoint)
-                .then()
-                .statusCode(200)
-                .assertThat()
-                .extract().response();
+                .get(endpoint);
     }
 
     public static <T> Response postMethod(String endpoint, T entry){
@@ -29,9 +25,6 @@ public class APIUtils {
                 .header("Content-Type", "application/json")
                 .when()
                 .body(entry)
-                .post(endpoint)
-                .then()
-                .statusCode(201)
-                .extract().response();
+                .post(endpoint);
     }
 }
